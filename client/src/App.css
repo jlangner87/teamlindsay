@@ -3,6 +3,19 @@ body {
   background-color: #fceded;
 }
 
+button {
+  width: 150px;
+  height: 52px;
+  margin-top: 10px;
+  margin-bottom: 25px;
+  border-radius: 6px;
+  font-size: 18px;
+  font-family: 'Tenor Sans', sans-serif;
+  color: black;
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
 .App {
   display: flex;
   flex-direction: column;
@@ -80,7 +93,7 @@ input {
 
 label {
   font-family: 'Tenor Sans', sans-serif;
-  letter-spacing: 5px;
+  letter-spacing: normal;
   font-size: 16px;
   color: black;
   text-transform: uppercase;
@@ -126,6 +139,22 @@ label {
   color: black;
   text-transform: uppercase;
   margin-top: 0;
+}
+
+.price {
+  font-family: 'Tenor Sans', sans-serif;
+  letter-spacing: 5px;
+  font-size: 30px;
+  color: black;
+  text-transform: uppercase;
+  background-color: #fceded;
+  max-width: fit-content;
+  border: 2px solid black;
+  border-radius: 50px;
+  padding: 15px;
+  margin: 0 auto;
+  margin-bottom: 35px;
+  color: magenta;
 }
 
 .youth {
@@ -257,6 +286,11 @@ label {
     margin-top: 10px;
     margin-bottom: 25px;
     border-radius: 6px;
+    font-size: 12px;
+  }
+
+  .price {
+    font-size: 24px;
   }
 
 }
