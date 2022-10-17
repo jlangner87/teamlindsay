@@ -1,4 +1,5 @@
 import './App.css'
+import emailjs from 'emailjs-com'
 import { useState } from 'react'
 import back from './assets/back.png'
 import front from './assets/front.png'
@@ -100,7 +101,33 @@ function App() {
         parseInt(formState.pinkAdultXl) * 22 +
         parseInt(formState.pinkAdult2Xl) * 22 +
         parseInt(formState.pinkAdult3Xl) * 22 +
-        parseInt(formState.pinkAdult4Xl) * 22
+        parseInt(formState.pinkAdult4Xl) * 22 +
+        parseInt(formState.blackYouthXs) * 18 +
+        parseInt(formState.blackYouthS) * 18 +
+        parseInt(formState.blackYouthM) * 18 +
+        parseInt(formState.blackYouthL) * 18 +
+        parseInt(formState.blackYouthXl) * 18 +
+        parseInt(formState.blackAdultXs) * 22 +
+        parseInt(formState.blackAdultS) * 22 +
+        parseInt(formState.blackAdultM) * 22 +
+        parseInt(formState.blackAdultL) * 22 +
+        parseInt(formState.blackAdultXl) * 22 +
+        parseInt(formState.blackAdult2Xl) * 22 +
+        parseInt(formState.blackAdult3Xl) * 22 +
+        parseInt(formState.blackAdult4Xl) * 22 +
+        parseInt(formState.whiteYouthXs) * 18 +
+        parseInt(formState.whiteYouthS) * 18 +
+        parseInt(formState.whiteYouthM) * 18 +
+        parseInt(formState.whiteYouthL) * 18 +
+        parseInt(formState.whiteYouthXl) * 18 +
+        parseInt(formState.whiteAdultXs) * 22 +
+        parseInt(formState.whiteAdultS) * 22 +
+        parseInt(formState.whiteAdultM) * 22 +
+        parseInt(formState.whiteAdultL) * 22 +
+        parseInt(formState.whiteAdultXl) * 22 +
+        parseInt(formState.whiteAdult2Xl) * 22 +
+        parseInt(formState.whiteAdult3Xl) * 22 +
+        parseInt(formState.whiteAdult4Xl) * 22
     )
   }
 
@@ -330,58 +357,149 @@ function App() {
             <div className="form2">
               <div className="field_container">
                 <label>XS</label>
-                <input className="qty" placeholder="qty"></input>
+                <input
+                  id="blackYouthXs"
+                  value={formState.blackYouthXs}
+                  onChange={handleChange}
+                  className="qty"
+                  placeholder="qty"
+                  type="number"
+                ></input>
               </div>
               <div className="field_container">
                 <label>S</label>
-                <input className="qty" placeholder="qty"></input>
+                <input
+                  id="blackYouthS"
+                  value={formState.blackYouthS}
+                  onChange={handleChange}
+                  className="qty"
+                  placeholder="qty"
+                  type="number"
+                ></input>
               </div>
               <div className="field_container">
                 <label>M</label>
-                <input className="qty" placeholder="qty"></input>
+                <input
+                  id="blackYouthM"
+                  value={formState.blackYouthM}
+                  onChange={handleChange}
+                  className="qty"
+                  placeholder="qty"
+                  type="number"
+                ></input>
               </div>
               <div className="field_container">
                 <label>L</label>
-                <input className="qty" placeholder="qty"></input>
+                <input
+                  id="blackYouthL"
+                  value={formState.blackYouthL}
+                  onChange={handleChange}
+                  className="qty"
+                  placeholder="qty"
+                  type="number"
+                ></input>
               </div>
               <div className="field_container">
                 <label>XL</label>
-                <input className="qty" placeholder="qty"></input>
+                <input
+                  id="blackYouthXl"
+                  value={formState.blackYouthXl}
+                  onChange={handleChange}
+                  className="qty"
+                  placeholder="qty"
+                  type="number"
+                ></input>
               </div>
             </div>
             <p className="youth">Adult $22</p>
             <div className="form2">
               <div className="field_container">
                 <label>XS</label>
-                <input className="qty" placeholder="qty"></input>
+                <input
+                  id="blackAdultXs"
+                  value={formState.blackAdultXs}
+                  onChange={handleChange}
+                  className="qty"
+                  placeholder="qty"
+                  type="number"
+                ></input>
               </div>
               <div className="field_container">
                 <label>S</label>
-                <input className="qty" placeholder="qty"></input>
+                <input
+                  id="blackAdultS"
+                  value={formState.blackAdultS}
+                  onChange={handleChange}
+                  className="qty"
+                  placeholder="qty"
+                  type="number"
+                ></input>
               </div>
               <div className="field_container">
                 <label>M</label>
-                <input className="qty" placeholder="qty"></input>
+                <input
+                  id="blackAdultM"
+                  value={formState.blackAdultM}
+                  onChange={handleChange}
+                  className="qty"
+                  placeholder="qty"
+                  type="number"
+                ></input>
               </div>
               <div className="field_container">
                 <label>L</label>
-                <input className="qty" placeholder="qty"></input>
+                <input
+                  id="blackAdultL"
+                  value={formState.blackAdultL}
+                  onChange={handleChange}
+                  className="qty"
+                  placeholder="qty"
+                  type="number"
+                ></input>
               </div>
               <div className="field_container">
                 <label>XL</label>
-                <input className="qty" placeholder="qty"></input>
+                <input
+                  id="blackAdultXl"
+                  value={formState.blackAdultXl}
+                  onChange={handleChange}
+                  className="qty"
+                  placeholder="qty"
+                  type="number"
+                ></input>
               </div>
               <div className="field_container">
                 <label>2XL</label>
-                <input className="qty" placeholder="qty"></input>
+                <input
+                  id="blackAdult2Xl"
+                  value={formState.blackAdult2Xl}
+                  onChange={handleChange}
+                  className="qty"
+                  placeholder="qty"
+                  type="number"
+                ></input>
               </div>
               <div className="field_container">
                 <label>3XL</label>
-                <input className="qty" placeholder="qty"></input>
+                <input
+                  id="blackAdult3Xl"
+                  value={formState.blackAdult3Xl}
+                  onChange={handleChange}
+                  className="qty"
+                  placeholder="qty"
+                  type="number"
+                ></input>
               </div>
               <div className="field_container">
                 <label>4XL</label>
-                <input className="qty" placeholder="qty"></input>
+                <input
+                  id="blackAdult4Xl"
+                  value={formState.blackAdult4Xl}
+                  onChange={handleChange}
+                  className="qty"
+                  placeholder="qty"
+                  type="number"
+                ></input>
               </div>
             </div>
           </div>
@@ -391,58 +509,149 @@ function App() {
             <div className="form2">
               <div className="field_container">
                 <label>XS</label>
-                <input className="qty" placeholder="qty"></input>
+                <input
+                  id="whiteYouthXs"
+                  value={formState.whiteYouthXs}
+                  onChange={handleChange}
+                  className="qty"
+                  placeholder="qty"
+                  type="number"
+                ></input>
               </div>
               <div className="field_container">
                 <label>S</label>
-                <input className="qty" placeholder="qty"></input>
+                <input
+                  id="whiteYouthS"
+                  value={formState.whiteYouthS}
+                  onChange={handleChange}
+                  className="qty"
+                  placeholder="qty"
+                  type="number"
+                ></input>
               </div>
               <div className="field_container">
                 <label>M</label>
-                <input className="qty" placeholder="qty"></input>
+                <input
+                  id="whiteYouthM"
+                  value={formState.whiteYouthM}
+                  onChange={handleChange}
+                  className="qty"
+                  placeholder="qty"
+                  type="number"
+                ></input>
               </div>
               <div className="field_container">
                 <label>L</label>
-                <input className="qty" placeholder="qty"></input>
+                <input
+                  id="whiteYouthL"
+                  value={formState.whiteYouthL}
+                  onChange={handleChange}
+                  className="qty"
+                  placeholder="qty"
+                  type="number"
+                ></input>
               </div>
               <div className="field_container">
                 <label>XL</label>
-                <input className="qty" placeholder="qty"></input>
+                <input
+                  id="whiteYouthXl"
+                  value={formState.whiteYouthXl}
+                  onChange={handleChange}
+                  className="qty"
+                  placeholder="qty"
+                  type="number"
+                ></input>
               </div>
             </div>
             <p className="youth">Adult $22</p>
             <div className="form2">
               <div className="field_container">
                 <label>XS</label>
-                <input className="qty" placeholder="qty"></input>
+                <input
+                  id="whiteAdultXs"
+                  value={formState.whiteAdultXs}
+                  onChange={handleChange}
+                  className="qty"
+                  placeholder="qty"
+                  type="number"
+                ></input>
               </div>
               <div className="field_container">
                 <label>S</label>
-                <input className="qty" placeholder="qty"></input>
+                <input
+                  id="whiteAdultS"
+                  value={formState.whiteAdultS}
+                  onChange={handleChange}
+                  className="qty"
+                  placeholder="qty"
+                  type="number"
+                ></input>
               </div>
               <div className="field_container">
                 <label>M</label>
-                <input className="qty" placeholder="qty"></input>
+                <input
+                  id="whiteAdultM"
+                  value={formState.whiteAdultM}
+                  onChange={handleChange}
+                  className="qty"
+                  placeholder="qty"
+                  type="number"
+                ></input>
               </div>
               <div className="field_container">
                 <label>L</label>
-                <input className="qty" placeholder="qty"></input>
+                <input
+                  id="whiteAdultL"
+                  value={formState.whiteAdultL}
+                  onChange={handleChange}
+                  className="qty"
+                  placeholder="qty"
+                  type="number"
+                ></input>
               </div>
               <div className="field_container">
                 <label>XL</label>
-                <input className="qty" placeholder="qty"></input>
+                <input
+                  id="whiteAdultXl"
+                  value={formState.whiteAdultXl}
+                  onChange={handleChange}
+                  className="qty"
+                  placeholder="qty"
+                  type="number"
+                ></input>
               </div>
               <div className="field_container">
                 <label>2XL</label>
-                <input className="qty" placeholder="qty"></input>
+                <input
+                  id="whiteAdult2Xl"
+                  value={formState.whiteAdult2Xl}
+                  onChange={handleChange}
+                  className="qty"
+                  placeholder="qty"
+                  type="number"
+                ></input>
               </div>
               <div className="field_container">
                 <label>3XL</label>
-                <input className="qty" placeholder="qty"></input>
+                <input
+                  id="whiteAdult3Xl"
+                  value={formState.whiteAdult3Xl}
+                  onChange={handleChange}
+                  className="qty"
+                  placeholder="qty"
+                  type="number"
+                ></input>
               </div>
               <div className="field_container">
                 <label>4XL</label>
-                <input className="qty" placeholder="qty"></input>
+                <input
+                  id="whiteAdult4Xl"
+                  value={formState.whiteAdult4Xl}
+                  onChange={handleChange}
+                  className="qty"
+                  placeholder="qty"
+                  type="number"
+                ></input>
               </div>
             </div>
             <button onClick={handleCart}>
