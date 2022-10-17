@@ -12,8 +12,8 @@ button {
   font-size: 18px;
   font-family: 'Tenor Sans', sans-serif;
   color: black;
-  margin-top: 0;
-  margin-bottom: 10px;
+  margin-top: 10px;
+  margin-bottom: 20px;
 }
 
 .App {
@@ -89,6 +89,7 @@ input {
   width: 200px;
   height: 30px;
   margin-bottom: 10px;
+  border: 1px solid black;
 }
 
 label {
@@ -153,8 +154,10 @@ label {
   border-radius: 50px;
   padding: 15px;
   margin: 0 auto;
-  margin-bottom: 35px;
+  margin-bottom: 75px;
+  margin-top: 45px;
   color: magenta;
+  box-shadow: 10px 10px 13px 0px rgba(41,41,41,0.75);
 }
 
 .youth {
@@ -206,6 +209,7 @@ label {
 }
 .pay_logo {
   width: 150px;
+  margin-top: 15px;
 }
 
 @media screen and (max-width: 600px) {
@@ -290,7 +294,9 @@ label {
   }
 
   .price {
-    font-size: 24px;
+    font-size: 20px;
+    margin-top: 10px;
+    margin-bottom: 50px;
   }
 
 }

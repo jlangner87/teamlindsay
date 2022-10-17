@@ -11,50 +11,58 @@ import paypal from './assets/paypal.png'
 
 function App() {
   let [price, setPrice] = useState(0)
-  //
-  let [fName, setFname] = useState('')
-  let [lName, setLName] = useState('')
-  let [phone, setPhone] = useState('')
-  let [email, setEmail] = useState('')
-  //
-  let [pinkYXS, setPinkYXS] = useState(0)
-  let [pinkYS, setPinkYS] = useState(0)
-  let [pinkYM, setPinkYM] = useState(0)
-  let [pinkYL, setPinkYL] = useState(0)
-  let [pinkYXL, setPinkYXL] = useState(0)
-  //
-  let [pinkXS, setPinkXS] = useState(0)
-  let [pinkS, setPinkS] = useState(0)
-  let [pinkM, setPinkM] = useState(0)
-  let [pinkL, setPinkL] = useState(0)
-  let [pinkXL, setPinkXL] = useState(0)
-  //
-  let [blackYXS, setBlackYXS] = useState(0)
-  let [blackYS, setBlackYS] = useState(0)
-  let [blackYM, setBlackYM] = useState(0)
-  let [blackYL, setBlackYL] = useState(0)
-  let [blackYXL, setBlackYXL] = useState(0)
-  //
-  let [blackXS, setBlackXS] = useState(0)
-  let [blackS, setBlackS] = useState(0)
-  let [blackM, setBlackM] = useState(0)
-  let [blackL, setBlackL] = useState(0)
-  let [blackXL, setBlackXL] = useState(0)
-  //
-  let [whiteYXS, setWhiteYXS] = useState(0)
-  let [whiteYS, setWhiteYS] = useState(0)
-  let [whiteYM, setWhiteYM] = useState(0)
-  let [whiteYL, setWhiteYL] = useState(0)
-  let [whiteYXL, setWhiteYXL] = useState(0)
-  //
-  let [whiteXS, setWhiteXS] = useState(0)
-  let [whiteS, setWhiteS] = useState(0)
-  let [whiteM, setWhiteM] = useState(0)
-  let [whiteL, setWhiteL] = useState(0)
-  let [whiteXL, setWhiteXL] = useState(0)
+  let [cart, setCart] = useState('')
+
+  const initialState = {
+    first: '',
+    last: '',
+    phone: '',
+    email: '',
+    pinkYouthXs: '',
+    pinkYouthS: '',
+    pinkYouthM: '',
+    pinkYouthL: '',
+    pinkYouthXl: '',
+    pinkAdultXs: '',
+    pinkAdultS: '',
+    pinkAdultM: '',
+    pinkAdultL: '',
+    pinkAdultXl: '',
+    pinkAdult2Xl: '',
+    pinkAdult3Xl: '',
+    pinkAdult4Xl: '',
+    blackYouthXs: '',
+    blackYouthS: '',
+    blackYouthM: '',
+    blackYouthL: '',
+    blackYouthXl: '',
+    blackAdultXs: '',
+    blackAdultS: '',
+    blackAdultM: '',
+    blackAdultL: '',
+    blackAdultXl: '',
+    blackAdult2Xl: '',
+    blackAdult3Xl: '',
+    blackAdult4Xl: '',
+    whiteYouthXs: '',
+    whiteYouthS: '',
+    whiteYouthM: '',
+    whiteYouthL: '',
+    whiteYouthXl: '',
+    whiteAdultXs: '',
+    whiteAdultS: '',
+    whiteAdultM: '',
+    whiteAdultL: '',
+    whiteAdultXl: '',
+    whiteAdult2Xl: '',
+    whiteAdult3Xl: '',
+    whiteAdult4Xl: '',
+    payment: 'I have NOT submitted payment.'
+  }
 
   const handleCart = (event) => {
     event.preventDefault()
+    setCart(`your cart`)
     setPrice(price + 18)
   }
 
@@ -163,7 +171,6 @@ function App() {
                 <input className="qty" placeholder="qty"></input>
               </div>
             </div>
-            <button onClick={handleCart}>ADD TO CART</button>
           </div>
           <div className="color_form">
             <p className="subtitle2">BLACK shirts</p>
@@ -286,9 +293,11 @@ function App() {
                 <input className="qty" placeholder="qty"></input>
               </div>
             </div>
+            <button onClick={handleCart}>ADD TO ORDER</button>
           </div>
           <div className="form3">
             <p className="subtitle2">PAYMENT</p>
+            <p className="text">{cart}</p>
             <p className="price">TOTAL: ${price}.00</p>
             <p className="text">
               Please make payments to one of the following accounts.
@@ -316,7 +325,7 @@ function App() {
             <input className="checkbox" type="checkbox"></input>
           </div>
           <div>
-            <button>ORDER</button>
+            <button>PLACE ORDER</button>
           </div>
         </form>
       </div>
