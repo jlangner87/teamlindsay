@@ -9,11 +9,15 @@ button {
   margin-top: 10px;
   margin-bottom: 25px;
   border-radius: 6px;
-  font-size: 18px;
+  font-size: 20px;
   font-family: 'Tenor Sans', sans-serif;
   color: black;
   margin-top: 10px;
   margin-bottom: 20px;
+}
+
+.cart_logo {
+  width: 20px;
 }
 
 .App {

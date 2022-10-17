@@ -2,6 +2,8 @@ import './App.css'
 import { useState } from 'react'
 import back from './assets/back.png'
 import front from './assets/front.png'
+import add_cart from './assets/add_cart.png'
+import view_cart from './assets/view_cart.png'
 import black from './assets/black.png'
 import pink from './assets/pink.png'
 import white from './assets/white.png'
@@ -60,13 +62,21 @@ function App() {
     payment: 'I have NOT submitted payment.'
   }
 
+  const [formState, setFormState] = useState(initialState)
+
+  const handleChange = (event) => {
+    setFormState({ ...formState, [event.target.id]: event.target.value })
+  }
   const handleCart = (event) => {
     event.preventDefault()
     setCart(`your cart`)
     setPrice(price + 18)
   }
 
-  const handleOrder = () => {}
+  const handleOrder = (event) => {
+    event.preventDefault()
+    alert(`YOUR ORDER HAS BEEN PLACED`)
+  }
 
   return (
     <div className="App">
@@ -91,16 +101,26 @@ function App() {
       </div>
       <h1 className="subtitle">PLACE YOUR ORDER NOW</h1>
       <div className="form_container">
-        <form>
+        <form onSubmit={handleOrder}>
           <p className="subtitle2">contact information</p>
           <div className="form">
             <div className="field_container">
               <label>First Name:</label>
-              <input></input>
+              <input
+                id="first"
+                value={formState.first}
+                placeholder="First Name"
+                onChange={handleChange}
+              ></input>
             </div>
             <div className="field_container">
               <label>Last Name:</label>
-              <input></input>
+              <input
+                id="last"
+                value={formState.last}
+                placeholder="Last Name"
+                onChange={handleChange}
+              ></input>
             </div>
             <div className="field_container">
               <label>Phone Number:</label>
@@ -293,11 +313,16 @@ function App() {
                 <input className="qty" placeholder="qty"></input>
               </div>
             </div>
-            <button onClick={handleCart}>ADD TO ORDER</button>
+            <button onClick={handleCart}>
+              <img className="cart_logo" src={add_cart} /> ADD
+            </button>
           </div>
           <div className="form3">
             <p className="subtitle2">PAYMENT</p>
-            <p className="text">{cart}</p>
+            <p className="text">
+              <img className="cart_logo" src={view_cart} /> Hey,{' '}
+              {formState.first}! Thanks for ordering
+            </p>
             <p className="price">TOTAL: ${price}.00</p>
             <p className="text">
               Please make payments to one of the following accounts.
