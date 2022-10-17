@@ -146,6 +146,16 @@ label {
   margin-top: 0;
 }
 
+.cart {
+  background-color: #fceded;
+  width: 50%;
+  margin: 0 auto;
+  border-radius: 16px;
+  box-shadow: 10px 10px 13px 0px rgba(41,41,41,0.75);
+  text-align: left;
+  padding: 15px;
+}
+
 .price {
   font-family: 'Tenor Sans', sans-serif;
   letter-spacing: 5px;

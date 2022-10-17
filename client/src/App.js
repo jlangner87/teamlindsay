@@ -20,45 +20,45 @@ function App() {
     last: '',
     phone: '',
     email: '',
-    pinkYouthXs: '',
-    pinkYouthS: '',
-    pinkYouthM: '',
-    pinkYouthL: '',
-    pinkYouthXl: '',
-    pinkAdultXs: '',
-    pinkAdultS: '',
-    pinkAdultM: '',
-    pinkAdultL: '',
-    pinkAdultXl: '',
-    pinkAdult2Xl: '',
-    pinkAdult3Xl: '',
-    pinkAdult4Xl: '',
-    blackYouthXs: '',
-    blackYouthS: '',
-    blackYouthM: '',
-    blackYouthL: '',
-    blackYouthXl: '',
-    blackAdultXs: '',
-    blackAdultS: '',
-    blackAdultM: '',
-    blackAdultL: '',
-    blackAdultXl: '',
-    blackAdult2Xl: '',
-    blackAdult3Xl: '',
-    blackAdult4Xl: '',
-    whiteYouthXs: '',
-    whiteYouthS: '',
-    whiteYouthM: '',
-    whiteYouthL: '',
-    whiteYouthXl: '',
-    whiteAdultXs: '',
-    whiteAdultS: '',
-    whiteAdultM: '',
-    whiteAdultL: '',
-    whiteAdultXl: '',
-    whiteAdult2Xl: '',
-    whiteAdult3Xl: '',
-    whiteAdult4Xl: '',
+    pinkYouthXs: 0,
+    pinkYouthS: 0,
+    pinkYouthM: 0,
+    pinkYouthL: 0,
+    pinkYouthXl: 0,
+    pinkAdultXs: 0,
+    pinkAdultS: 0,
+    pinkAdultM: 0,
+    pinkAdultL: 0,
+    pinkAdultXl: 0,
+    pinkAdult2Xl: 0,
+    pinkAdult3Xl: 0,
+    pinkAdult4Xl: 0,
+    blackYouthXs: 0,
+    blackYouthS: 0,
+    blackYouthM: 0,
+    blackYouthL: 0,
+    blackYouthXl: 0,
+    blackAdultXs: 0,
+    blackAdultS: 0,
+    blackAdultM: 0,
+    blackAdultL: 0,
+    blackAdultXl: 0,
+    blackAdult2Xl: 0,
+    blackAdult3Xl: 0,
+    blackAdult4Xl: 0,
+    whiteYouthXs: 0,
+    whiteYouthS: 0,
+    whiteYouthM: 0,
+    whiteYouthL: 0,
+    whiteYouthXl: 0,
+    whiteAdultXs: 0,
+    whiteAdultS: 0,
+    whiteAdultM: 0,
+    whiteAdultL: 0,
+    whiteAdultXl: 0,
+    whiteAdult2Xl: 0,
+    whiteAdult3Xl: 0,
+    whiteAdult4Xl: 0,
     payment: 'I have NOT submitted payment.'
   }
 
@@ -69,8 +69,39 @@ function App() {
   }
   const handleCart = (event) => {
     event.preventDefault()
-    setCart(`your cart`)
-    setPrice(price + 18)
+    setCart(
+      `💖 Youth Pink XS: QTY= ${formState.pinkYouthXs} @ $18.00 ea. = $${
+        parseInt(formState.pinkYouthXs) * 18
+      }.00
+      💖 Youth Pink S: QTY= ${formState.pinkYouthS} @ $18.00 ea. = $${
+        parseInt(formState.pinkYouthS) * 18
+      }.00
+      💖 Youth Pink M: QTY:= ${formState.pinkYouthM} @ $18.00 ea. = $${
+        parseInt(formState.pinkYouthM) * 18
+      }.00
+      💖 Youth Pink L: QTY= ${formState.pinkYouthL} @ $18.00 ea. = $${
+        parseInt(formState.pinkYouthL) * 18
+      }.00
+      💖 Youth Pink XL: QTY= ${formState.pinkYouthXl} @ $18.00 ea. = $${
+        parseInt(formState.pinkYouthXl) * 18
+      }.00`
+    )
+
+    setPrice(
+      parseInt(formState.pinkYouthXs) * 18 +
+        parseInt(formState.pinkYouthS) * 18 +
+        parseInt(formState.pinkYouthM) * 18 +
+        parseInt(formState.pinkYouthL) * 18 +
+        parseInt(formState.pinkYouthXl) * 18 +
+        parseInt(formState.pinkAdultXs) * 22 +
+        parseInt(formState.pinkAdultS) * 22 +
+        parseInt(formState.pinkAdultM) * 22 +
+        parseInt(formState.pinkAdultL) * 22 +
+        parseInt(formState.pinkAdultXl) * 22 +
+        parseInt(formState.pinkAdult2Xl) * 22 +
+        parseInt(formState.pinkAdult3Xl) * 22 +
+        parseInt(formState.pinkAdult4Xl) * 22
+    )
   }
 
   const handleOrder = (event) => {
@@ -124,11 +155,21 @@ function App() {
             </div>
             <div className="field_container">
               <label>Phone Number:</label>
-              <input></input>
+              <input
+                id="phone"
+                value={formState.phone}
+                placeholder="Phone Number"
+                onChange={handleChange}
+              ></input>
             </div>
             <div className="field_container">
               <label>Email:</label>
-              <input></input>
+              <input
+                id="email"
+                value={formState.email}
+                placeholder="Email Address"
+                onChange={handleChange}
+              ></input>
             </div>
           </div>
           <div className="color_form">
@@ -137,58 +178,149 @@ function App() {
             <div className="form2">
               <div className="field_container">
                 <label>XS</label>
-                <input id={price} className="qty" placeholder="qty"></input>
+                <input
+                  id="pinkYouthXs"
+                  value={formState.pinkYouthXs}
+                  onChange={handleChange}
+                  className="qty"
+                  placeholder="qty"
+                  type="number"
+                ></input>
               </div>
               <div className="field_container">
                 <label>S</label>
-                <input className="qty" placeholder="qty"></input>
+                <input
+                  id="pinkYouthS"
+                  value={formState.pinkYouthS}
+                  onChange={handleChange}
+                  className="qty"
+                  placeholder="qty"
+                  type="number"
+                ></input>
               </div>
               <div className="field_container">
                 <label>M</label>
-                <input className="qty" placeholder="qty"></input>
+                <input
+                  id="pinkYouthM"
+                  value={formState.pinkYouthM}
+                  onChange={handleChange}
+                  className="qty"
+                  placeholder="qty"
+                  type="number"
+                ></input>
               </div>
               <div className="field_container">
                 <label>L</label>
-                <input className="qty" placeholder="qty"></input>
+                <input
+                  id="pinkYouthL"
+                  value={formState.pinkYouthL}
+                  onChange={handleChange}
+                  className="qty"
+                  placeholder="qty"
+                  type="number"
+                ></input>
               </div>
               <div className="field_container">
                 <label>XL</label>
-                <input className="qty" placeholder="qty"></input>
+                <input
+                  id="pinkYouthXl"
+                  value={formState.pinkYouthXl}
+                  onChange={handleChange}
+                  className="qty"
+                  placeholder="qty"
+                  type="number"
+                ></input>
               </div>
             </div>
             <p className="youth">Adult $22</p>
             <div className="form2">
               <div className="field_container">
                 <label>XS</label>
-                <input className="qty" placeholder="qty"></input>
+                <input
+                  id="pinkAdultXs"
+                  value={formState.pinkAdultXs}
+                  onChange={handleChange}
+                  className="qty"
+                  placeholder="qty"
+                  type="number"
+                ></input>
               </div>
               <div className="field_container">
                 <label>S</label>
-                <input className="qty" placeholder="qty"></input>
+                <input
+                  id="pinkAdultS"
+                  value={formState.pinkAdultS}
+                  onChange={handleChange}
+                  className="qty"
+                  placeholder="qty"
+                  type="number"
+                ></input>
               </div>
               <div className="field_container">
                 <label>M</label>
-                <input className="qty" placeholder="qty"></input>
+                <input
+                  id="pinkAdultM"
+                  value={formState.pinkAdultM}
+                  onChange={handleChange}
+                  className="qty"
+                  placeholder="qty"
+                  type="number"
+                ></input>
               </div>
               <div className="field_container">
                 <label>L</label>
-                <input className="qty" placeholder="qty"></input>
+                <input
+                  id="pinkAdultL"
+                  value={formState.pinkAdultL}
+                  onChange={handleChange}
+                  className="qty"
+                  placeholder="qty"
+                  type="number"
+                ></input>
               </div>
               <div className="field_container">
                 <label>XL</label>
-                <input className="qty" placeholder="qty"></input>
+                <input
+                  id="pinkAdultXl"
+                  value={formState.pinkAdultXl}
+                  onChange={handleChange}
+                  className="qty"
+                  placeholder="qty"
+                  type="number"
+                ></input>
               </div>
               <div className="field_container">
                 <label>2XL</label>
-                <input className="qty" placeholder="qty"></input>
+                <input
+                  id="pinkAdult2Xl"
+                  value={formState.pinkAdult2Xl}
+                  onChange={handleChange}
+                  className="qty"
+                  placeholder="qty"
+                  type="number"
+                ></input>
               </div>
               <div className="field_container">
                 <label>3XL</label>
-                <input className="qty" placeholder="qty"></input>
+                <input
+                  id="pinkAdult3Xl"
+                  value={formState.pinkAdult3Xl}
+                  onChange={handleChange}
+                  className="qty"
+                  placeholder="qty"
+                  type="number"
+                ></input>
               </div>
               <div className="field_container">
                 <label>4XL</label>
-                <input className="qty" placeholder="qty"></input>
+                <input
+                  id="pinkAdult4Xl"
+                  value={formState.pinkAdult4Xl}
+                  onChange={handleChange}
+                  className="qty"
+                  placeholder="qty"
+                  type="number"
+                ></input>
               </div>
             </div>
           </div>
@@ -318,12 +450,18 @@ function App() {
             </button>
           </div>
           <div className="form3">
-            <p className="subtitle2">PAYMENT</p>
+            <p className="subtitle2">YOUR ORDER</p>
             <p className="text">
-              <img className="cart_logo" src={view_cart} /> Hey,{' '}
-              {formState.first}! Thanks for ordering
+              Hey, {formState.first}! Thank you so much for ordering!
             </p>
+            <br />
+            <p className="text">Does Everything look correct?</p>
+            <div className="cart">
+              <img className="cart_logo" src={view_cart} />
+              <p className="text">{cart}</p>
+            </div>
             <p className="price">TOTAL: ${price}.00</p>
+            <p className="subtitle2">PAYMENT</p>
             <p className="text">
               Please make payments to one of the following accounts.
             </p>
