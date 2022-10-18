@@ -173,6 +173,17 @@ label {
   color: magenta;
   box-shadow: 10px 10px 13px 0px rgba(41,41,41,0.75);
 }
+.drop {
+  width: 165px;
+  height: 52px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-family: 'Tenor Sans', sans-serif;
+  color: black;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
 
 .youth {
   font-family: 'Tenor Sans', sans-serif;
@@ -216,6 +227,7 @@ label {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
+  margin-bottom: 35px;
 }
 
 .payment_opt2 {

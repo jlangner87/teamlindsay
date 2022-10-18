@@ -60,7 +60,8 @@ function App() {
     whiteAdult2Xl: 0,
     whiteAdult3Xl: 0,
     whiteAdult4Xl: 0,
-    payment: 'I have NOT submitted payment.'
+    payment: '',
+    pay_destination: ''
   }
 
   const [formState, setFormState] = useState(initialState)
@@ -88,52 +89,69 @@ function App() {
       }.00`
     )
 
-    setPrice(
+    let thisPrice =
       parseInt(formState.pinkYouthXs) * 18 +
-        parseInt(formState.pinkYouthS) * 18 +
-        parseInt(formState.pinkYouthM) * 18 +
-        parseInt(formState.pinkYouthL) * 18 +
-        parseInt(formState.pinkYouthXl) * 18 +
-        parseInt(formState.pinkAdultXs) * 22 +
-        parseInt(formState.pinkAdultS) * 22 +
-        parseInt(formState.pinkAdultM) * 22 +
-        parseInt(formState.pinkAdultL) * 22 +
-        parseInt(formState.pinkAdultXl) * 22 +
-        parseInt(formState.pinkAdult2Xl) * 22 +
-        parseInt(formState.pinkAdult3Xl) * 22 +
-        parseInt(formState.pinkAdult4Xl) * 22 +
-        parseInt(formState.blackYouthXs) * 18 +
-        parseInt(formState.blackYouthS) * 18 +
-        parseInt(formState.blackYouthM) * 18 +
-        parseInt(formState.blackYouthL) * 18 +
-        parseInt(formState.blackYouthXl) * 18 +
-        parseInt(formState.blackAdultXs) * 22 +
-        parseInt(formState.blackAdultS) * 22 +
-        parseInt(formState.blackAdultM) * 22 +
-        parseInt(formState.blackAdultL) * 22 +
-        parseInt(formState.blackAdultXl) * 22 +
-        parseInt(formState.blackAdult2Xl) * 22 +
-        parseInt(formState.blackAdult3Xl) * 22 +
-        parseInt(formState.blackAdult4Xl) * 22 +
-        parseInt(formState.whiteYouthXs) * 18 +
-        parseInt(formState.whiteYouthS) * 18 +
-        parseInt(formState.whiteYouthM) * 18 +
-        parseInt(formState.whiteYouthL) * 18 +
-        parseInt(formState.whiteYouthXl) * 18 +
-        parseInt(formState.whiteAdultXs) * 22 +
-        parseInt(formState.whiteAdultS) * 22 +
-        parseInt(formState.whiteAdultM) * 22 +
-        parseInt(formState.whiteAdultL) * 22 +
-        parseInt(formState.whiteAdultXl) * 22 +
-        parseInt(formState.whiteAdult2Xl) * 22 +
-        parseInt(formState.whiteAdult3Xl) * 22 +
-        parseInt(formState.whiteAdult4Xl) * 22
-    )
+      parseInt(formState.pinkYouthS) * 18 +
+      parseInt(formState.pinkYouthM) * 18 +
+      parseInt(formState.pinkYouthL) * 18 +
+      parseInt(formState.pinkYouthXl) * 18 +
+      parseInt(formState.pinkAdultXs) * 22 +
+      parseInt(formState.pinkAdultS) * 22 +
+      parseInt(formState.pinkAdultM) * 22 +
+      parseInt(formState.pinkAdultL) * 22 +
+      parseInt(formState.pinkAdultXl) * 22 +
+      parseInt(formState.pinkAdult2Xl) * 22 +
+      parseInt(formState.pinkAdult3Xl) * 22 +
+      parseInt(formState.pinkAdult4Xl) * 22 +
+      parseInt(formState.blackYouthXs) * 18 +
+      parseInt(formState.blackYouthS) * 18 +
+      parseInt(formState.blackYouthM) * 18 +
+      parseInt(formState.blackYouthL) * 18 +
+      parseInt(formState.blackYouthXl) * 18 +
+      parseInt(formState.blackAdultXs) * 22 +
+      parseInt(formState.blackAdultS) * 22 +
+      parseInt(formState.blackAdultM) * 22 +
+      parseInt(formState.blackAdultL) * 22 +
+      parseInt(formState.blackAdultXl) * 22 +
+      parseInt(formState.blackAdult2Xl) * 22 +
+      parseInt(formState.blackAdult3Xl) * 22 +
+      parseInt(formState.blackAdult4Xl) * 22 +
+      parseInt(formState.whiteYouthXs) * 18 +
+      parseInt(formState.whiteYouthS) * 18 +
+      parseInt(formState.whiteYouthM) * 18 +
+      parseInt(formState.whiteYouthL) * 18 +
+      parseInt(formState.whiteYouthXl) * 18 +
+      parseInt(formState.whiteAdultXs) * 22 +
+      parseInt(formState.whiteAdultS) * 22 +
+      parseInt(formState.whiteAdultM) * 22 +
+      parseInt(formState.whiteAdultL) * 22 +
+      parseInt(formState.whiteAdultXl) * 22 +
+      parseInt(formState.whiteAdult2Xl) * 22 +
+      parseInt(formState.whiteAdult3Xl) * 22 +
+      parseInt(formState.whiteAdult4Xl) * 22
+
+    setPrice(thisPrice)
   }
 
-  const handleOrder = (event) => {
-    event.preventDefault()
-    alert(`YOUR ORDER HAS BEEN PLACED`)
+  const handleOrder = (e) => {
+    e.preventDefault()
+    emailjs
+      .send(
+        'service_41vta4r',
+        'template_lh9pqr7',
+        formState,
+        '-g6CgSoAgcOI1wfb6'
+      )
+      .then(
+        function (response) {
+          alert(
+            `We appreacite you so much, ${formState.first}! Your order has been submitted`
+          )
+        },
+        function (error) {
+          alert('Oops!', error)
+        }
+      )
   }
 
   return (
@@ -169,6 +187,7 @@ function App() {
                 value={formState.first}
                 placeholder="First Name"
                 onChange={handleChange}
+                required
               ></input>
             </div>
             <div className="field_container">
@@ -178,6 +197,7 @@ function App() {
                 value={formState.last}
                 placeholder="Last Name"
                 onChange={handleChange}
+                required
               ></input>
             </div>
             <div className="field_container">
@@ -187,6 +207,7 @@ function App() {
                 value={formState.phone}
                 placeholder="Phone Number"
                 onChange={handleChange}
+                required
               ></input>
             </div>
             <div className="field_container">
@@ -196,6 +217,7 @@ function App() {
                 value={formState.email}
                 placeholder="Email Address"
                 onChange={handleChange}
+                required
               ></input>
             </div>
           </div>
@@ -664,11 +686,11 @@ function App() {
               Hey, {formState.first}! Thank you so much for ordering!
             </p>
             <br />
-            <p className="text">Does Everything look correct?</p>
+            {/* <p className="text">Does Everything look correct?</p>
             <div className="cart">
               <img className="cart_logo" src={view_cart} />
               <p className="text">{cart}</p>
-            </div>
+            </div> */}
             <p className="price">TOTAL: ${price}.00</p>
             <p className="subtitle2">PAYMENT</p>
             <p className="text">
@@ -692,12 +714,31 @@ function App() {
                 <p className="subtitle3">@Amy-Bendlin-2</p>
               </div>
             </div>
-            <label>I have submitted payment</label>
-            <br />
-            <input className="checkbox" type="checkbox"></input>
+            <p className="text">Have you submitted payment?</p>
+            <select
+              className="drop"
+              onChange={handleChange}
+              id="payment"
+              value={formState.payment}
+            >
+              <option value={'no'}>Not yet</option>
+              <option value={'yes'}>Payment Submitted</option>
+            </select>
+            <p className="text">Where did you send your payment?</p>
+            <select
+              className="drop"
+              onChange={handleChange}
+              id="pay_destination"
+              value={formState.pay_destination}
+            >
+              <option value={'NA'}>NA</option>
+              <option value={'Paypal: @acowell24'}>PayPal</option>
+              <option value={'Venmo: @amy-bendlin-2'}>Venmo</option>
+              <option value={'NA'}>NA</option>
+            </select>
           </div>
           <div>
-            <button>PLACE ORDER</button>
+            <button onClick="handleOrder()">PLACE ORDER</button>
           </div>
         </form>
       </div>
