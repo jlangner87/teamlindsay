@@ -16,6 +16,14 @@ button {
   margin-bottom: 20px;
 }
 
+a:visited {
+  color: #fceded;
+}
+
+a {
+  color: #fceded;
+}
+
 .cart_logo {
   width: 20px;
 }
@@ -42,6 +50,12 @@ button {
 .logo {
   width: 400px;
   margin: -20px 0 20px 0;
+}
+
+.front_back {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .product_display {
@@ -170,7 +184,7 @@ label {
   margin: 0 auto;
   margin-bottom: 75px;
   margin-top: 45px;
-  color: magenta;
+  color: #b73274;
   box-shadow: 10px 10px 13px 0px rgba(41,41,41,0.75);
 }
 .drop {
@@ -207,7 +221,12 @@ label {
 .color_opt_row {
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: center;
+}
+
+.display_row {
+display: grid;
+grid-template-columns: 50% 50%;
 }
 
 .color_opt {
@@ -215,12 +234,22 @@ label {
   flex-direction: column;
   align-items: center;
 }
+
 .product_img2 {
   width: 65%;
   background-color:white;
   border-radius: 12px;
   box-shadow: 10px 10px 13px 0px rgba(41,41,41,0.75);
   border: 1px solid black;
+}
+
+.product_img3 {
+  width: 65%;
+  background-color:white;
+  border-radius: 12px;
+  box-shadow: 10px 10px 13px 0px rgba(41,41,41,0.75);
+  border: 1px solid black;
+  margin-bottom: 15px;
 }
 
 .payment_container {
@@ -323,6 +352,14 @@ label {
     font-size: 20px;
     margin-top: 10px;
     margin-bottom: 50px;
+  }
+  .product_img3 {
+    width: 90%;
+  }
+
+  .display_row {
+    display: flex;
+    flex-direction: column;
   }
 
 }

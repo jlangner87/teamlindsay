@@ -68,6 +68,9 @@ function App() {
 
   const handleChange = (event) => {
     setFormState({ ...formState, [event.target.id]: event.target.value })
+    if (event.target.value === '') {
+      setFormState({ ...formState, [event.target.id]: 0 })
+    }
   }
   const handleCart = (event) => {
     event.preventDefault()
@@ -129,7 +132,6 @@ function App() {
       parseInt(formState.whiteAdult2Xl) * 22 +
       parseInt(formState.whiteAdult3Xl) * 22 +
       parseInt(formState.whiteAdult4Xl) * 22
-
     setPrice(thisPrice)
   }
 
@@ -152,6 +154,7 @@ function App() {
           alert('Oops!', error)
         }
       )
+    setFormState(initialState)
   }
 
   return (
@@ -170,12 +173,24 @@ function App() {
           <h3 className="subtitle2">black</h3>
           <img className="product_img2" src={black} />
         </div>
-        <div className="color_opt">
+        <div className="front_back">
           <h3 className="subtitle2">white</h3>
           <img className="product_img2" src={white} />
         </div>
       </div>
+      <div className="display_row">
+        <div className="color_opt">
+          <h3 className="subtitle2">FRONT</h3>
+          <img className="product_img3" src={front} />
+        </div>
+        <div className="color_opt">
+          <h3 className="subtitle2">back</h3>
+          <img className="product_img3" src={back} />
+        </div>
+      </div>
+
       <h1 className="subtitle">PLACE YOUR ORDER NOW</h1>
+      <p className="text">Order any time before November 1st</p>
       <div className="form_container">
         <form onSubmit={handleOrder}>
           <p className="subtitle2">contact information</p>
@@ -691,6 +706,22 @@ function App() {
               <img className="cart_logo" src={view_cart} />
               <p className="text">{cart}</p>
             </div> */}
+            <p className="subtitle2">SHIRT PICK-UP</p>
+            <p className="text">Please make pick-up arrangements with Amber</p>
+            <p className="text">
+              Or pick them up at the event at One More Molly's on Noveber 19th
+            </p>
+            <br />
+            <p className="text">
+              Check out the official event page
+              <a
+                className="text"
+                href="https://www.facebook.com/events/431351825794093"
+              >
+                HERE
+              </a>
+              !
+            </p>
             <p className="price">TOTAL: ${price}.00</p>
             <p className="subtitle2">PAYMENT</p>
             <p className="text">
@@ -742,6 +773,7 @@ function App() {
           </div>
         </form>
       </div>
+      <footer>©2022 Joshua Langner ・ All Rights Reserved</footer>
     </div>
   )
 }
